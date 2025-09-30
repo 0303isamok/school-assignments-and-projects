@@ -30,5 +30,3 @@ while repeat_game == "yes":
     repeat_game = repeat_game.lower()
     
 print("Good job, thanks for playing my game broski")
-
-            
