@@ -12,7 +12,7 @@ while repeat_game == "YES":
     print("I made up a whole number between 1 and 100 (no decimals), guess it with 5 tries")
 
     while attempts < 5 and not tried:
-        guess = int(input("Enter your guess"))
+        guess = int(input("Enter your guess:"))
         attempts += 1
         if guess == number:
             tried = True
