@@ -15,20 +15,18 @@ while repeat_game == "yes":
         attempts += 1
         if guess == number:
             tried = True
-            print(f"Congratulations you guessed the right number in {attempts} attempts!")
-            print(f"The correct number was {number}!")
+            print(f"Congratulations you guessed the right number in ", attempts, " attempts!")
+            print(f"The correct number was ", number,"!")
         else:
             if guess < number:
-                print("too low")
+                print("Too low")
             else:
-                print("too high")
+                print("Too high")
+
     if not tried:
-        print("sorry you didnt manage to guess the number")
-        print(f"the correct number was {number}")
+        print("You did not manage to guess the number. You have reached the guessing limit")
+        print("The correct number was", number)
 
-    repeat_game = input("Do you wanna play again? (yes/no)")
-    repeat_game = repeat_game.lower()
-
-print("good job, thanks for playing my game broski")
+print("Good job, thanks for playing my game broski")
 
             
