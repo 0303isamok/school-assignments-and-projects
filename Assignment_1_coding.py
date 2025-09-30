@@ -1,14 +1,15 @@
 import random
 
-repeat_game = "yes"
+repeat_game = "YES" 
 
 
-while repeat_game == "yes":
+
+while repeat_game == "YES":
     number = random.randint(1,100)
     tried = False
     attempts = 0
 
-    print("I made up a number between 1 and 100, guess it with 5 tries if you can")
+    print("I made up a whole number between 1 and 100 (no decimals), guess it with 5 tries")
 
     while attempts < 5 and not tried:
         guess = int(input("Enter your guess"))
@@ -20,13 +21,15 @@ while repeat_game == "yes":
         else:
             if guess < number:
                 print("Too low")
+                print(5 - attempts, "attempts remaining")
             else:
                 print("Too high")
+                print(5 - attempts, "attempts remaining")
 
     if not tried:
         print("You did not manage to guess the number. You have reached the guessing limit")
         print("The correct number was", number)
-    repeat_game = input("Do you wanna play again? (yes/no)")
-    repeat_game = repeat_game.lower()
+    repeat_game = input("Do you wanna play again? (YES/NO)")
+    repeat_game = repeat_game.upper()
     
 print("Good job, thanks for playing my game broski")
