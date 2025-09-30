@@ -26,7 +26,9 @@ while repeat_game == "yes":
     if not tried:
         print("You did not manage to guess the number. You have reached the guessing limit")
         print("The correct number was", number)
-
+    repeat_game = input("Do you wanna play again? (yes/no)")
+    repeat_game = repeat_game.lower()
+    
 print("Good job, thanks for playing my game broski")
 
             
