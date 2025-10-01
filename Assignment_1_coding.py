@@ -32,4 +32,4 @@ while repeat_game == "YES":
     repeat_game = input("Do you wanna play again? (YES/NO)")
     repeat_game = repeat_game.upper()
     
-print("Good job, thanks for playing my game broski")
+print("Good job, thanks for playing my game")
