@@ -16,8 +16,8 @@ while repeat_game == "YES":
         attempts += 1
         if guess == number:
             tried = True
-            print(f"Congratulations you guessed the right number in ", attempts, " attempts!")
-            print(f"The correct number was ", number,"!")
+            print("Congratulations you guessed the right number in ", attempts, " attempts!")
+            print("The correct number was ", number,"!")
         else:
             if guess < number:
                 print("Too low")
