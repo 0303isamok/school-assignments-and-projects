@@ -1,3 +1,4 @@
+# Made by Isam Kartit and Ghulam Hussain Jarwar
 import random
 
 repeat_game = "YES" 
