@@ -2,7 +2,6 @@ import random as rd
 
 def main():
     
-    while True:
         again = "yes"
         print("####################")
         print("ROCK PAPER SCISSORS!")
@@ -21,7 +20,6 @@ def main():
                 print("invalid user input")
                 again = input("do you want to play again? (yes/no)").strip().lower()
             
-        break
         
 
 
@@ -30,7 +28,7 @@ def get_computer_choice(shapes):
 
 def get_player_choice(shapes):
     while True:
-        player_choice = input("Choices\nrock/paper/scissors/\nn what do you want to throw?").strip().lower()
+        player_choice = input("Choices\nrock/paper/scissors/\n what do you want to throw?").strip().lower()
         if player_choice in shapes:
             return player_choice
         else:
