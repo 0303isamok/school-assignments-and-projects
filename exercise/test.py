@@ -1,14 +1,15 @@
 import random as rd
 
 def main():
-    again = "yes"
-    while again == "yes":
+    
+    while True:
+        again = "yes"
         print("####################")
         print("ROCK PAPER SCISSORS!")
         print("####################")
         shapes = ["rock", "paper", "scissors"]
         
-        while True:
+        while again == "yes":
             player_choice = get_player_choice(shapes)
             computer_choice = get_computer_choice(shapes)
             print(f"player: {player_choice} computer: {computer_choice}")
@@ -16,11 +17,11 @@ def main():
             print(result)
 
             again = input("do you want to play again? (yes/no)").strip().lower()
-            while again != "yes" and again != "no":
+            while again not in ("yes", "no"):
                 print("invalid user input")
                 again = input("do you want to play again? (yes/no)").strip().lower()
-            if again == "no":
-                break
+            
+        break
         
 
 
@@ -29,11 +30,12 @@ def get_computer_choice(shapes):
 
 def get_player_choice(shapes):
     while True:
-        player_choice = input("you can choose between\n what do you want to throw?")
+        player_choice = input("Choices\nrock/paper/scissors/\nn what do you want to throw?").strip().lower()
         if player_choice in shapes:
             return player_choice
         else:
-            return "invalid user input"
+            print("invalid input, try again")
+            
 
 def winner(player_choice, computer_choice):
     if player_choice == computer_choice:
