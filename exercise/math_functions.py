@@ -16,3 +16,4 @@ x = int(input("value for x"))
 result = poly(a, b, c, x)
 
 print(result)
+
