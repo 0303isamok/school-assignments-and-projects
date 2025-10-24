@@ -1,6 +1,6 @@
 info_dict = {
-    "username": "M",
-    "password": "P"
+    "username": "Mek1000",
+    "password": "Python"
     }
 
 def quiz():
@@ -63,21 +63,31 @@ def quiz():
     print("#"*11)
 
     for q in quiz_info_list:
-        print(f"question {count + 1}")
+        print(f"Question {count + 1}")
         print(q["question"])
-        for opt in q:
+        for opt in q["options"]:
             print(opt)
-        user_awnser = input("Awnser (a/b/c/d):").strip().lower()
+        user_awnser = input("Awnser with (a/b/c/d):").strip().lower()
         if user_awnser == q["awnser"]:
+            print(f"Question {count + 1}")
+            print(q["question"])
+            for opt in q["options"]:
+                print(opt)
             count += 1
             score += 1
+            print("-"*24)
             print(f"{user_awnser} is correct!")
             print("Good Job!")
             print("_"*24)
         else:
+            print(f"Question {count + 1}")
+            print(q["question"])
+            for opt in q["options"]:
+                print(opt)
             count += 1
+            print("-"*24)
             print(f"{user_awnser} is the wrong awnser.")
-            print("the right awnser was ", q["awnser"] + ".")
+            print("The right awnser was ", q["awnser"] + ".")
             print("_"*24)
         if count == 10:
             print(f"FINAL RATING \n {score} / {count}")
@@ -85,20 +95,20 @@ def quiz():
 
 
 
-def login_info(username_input, password_input):
-    if username_input == info_dict["username"] and password_input == info_dict["password"]:
+def login_info(log_dict, username_input, password_input):
+    username_ok = username_input == log_dict["username"]
+    password_ok = password_input == log_dict["password"]
+    if username_ok == True and password_ok == True:
         print("login succeeded")
         return True
     else:
-        print("invalid username and/or password")
+        print("Invalid username and/or password")
         return False
 
 while True:
-    username_input = str(input("type your username here")).strip()
-    username_input = username_input.upper()
-    login_input = str(input("type your password here:")).strip()
-    login_input = login_input.capitalize()
+    username_input = str(input("type your username here")).strip().upper()
+    login_input = str(input("type your password here:")).strip().capitalize()
 
-    if login_info(username_input, login_input) == True:
+    if login_info(info_dict, username_input, login_input) == True:
         quiz()
         break
