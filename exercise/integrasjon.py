@@ -11,3 +11,4 @@ for i in range(n):
     hoyde = f(1+i*bredde)
     areal += hoyde*bredde
 print(areal)
+print (not (3 == 2) or 3 != 4)

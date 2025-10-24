@@ -11,7 +11,6 @@ numbers = {
     "8": "eight",
     "9": "nine",
 
-
 }
 translated = []
 phone_number = input("input number here:")
