@@ -70,6 +70,7 @@ def quiz():
         user_awnser = input("Awnser with (a/b/c/d):").strip().lower()
         if user_awnser == q["awnser"]:
             print(f"Question {count + 1}")
+            print("The question was ", end="")
             print(q["question"])
             for opt in q["options"]:
                 print(opt)
