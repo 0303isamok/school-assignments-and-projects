@@ -1,4 +1,4 @@
-#made by Isam kartit and Hussain
+#made by Isam kartit and Hussain Ghulam
 info_dict = {
     "username": "MEK1000",
     "password": "Python"
