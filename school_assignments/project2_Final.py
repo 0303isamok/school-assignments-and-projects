@@ -56,6 +56,8 @@ def quiz():
         "awnser": "b"
 
     }]
+    total_awnser_wrong = []
+    total_awnser_right = []
     count = 0
     wrong_awnser = 0
     right_awnser = 0
@@ -72,46 +74,34 @@ def quiz():
         print("_"*24)
         if user_awnser == q["awnser"]:
             right_awnser += 1
-            # print(f"Question {count + 1}")
-            # print("The question was ", end="")
-            # print(q["question"])
-            # for opt in q["options"]:
-            #     print(opt)
             count += 1
-            # score += 1
-            # print("-"*24)
-            # print(f"{user_awnser} is correct!")
-            # print("Good Job!")
-            # print("_"*24)
+            total_awnser_right.append(user_awnser)
         else:
             wrong_awnser += 1
-            # print(f"Question {count + 1}")
-            # print(q["question"])
-            # for opt in q["options"]:
-            #     print(opt)
             count += 1
-            # print("-"*24)
-            # print(f"{user_awnser} is the wrong awnser.")
-            # print("The right awnser was ", q["awnser"] + ".")
-            # 
+            total_awnser_wrong.append(user_awnser)
+
         if count == 10:
-            print(f"you got {right_awnser} right awnser's!")
-            print(f"you got {wrong_awnser} wrong awnser's!")
+            print("Score:")
+            print(f"You got {right_awnser} right awnser's!")
+            print(f"You got {wrong_awnser} wrong awnser's!")
+            print("_"*24)
             for i in quiz_info_list:
                 print(i["question"])
                 print("Options:")
                 for opt in i["options"]:
                     print(opt)
                 if user_awnser == i["awnser"]:
-                    print("You guessed right!")
+                    print(f"You guessed {}!")
                     print(f"the correct awnser was {user_awnser}")
                     print("_"*24)
                 else:
-                    print("You guessed wrong!")
+                    print(f"Wrong awnser!")
+                    print(f"You guessed {user_awnser}")
                     wrong = i["awnser"]
                     print(f"the right awnser was {wrong}")
                     print("_"*24)
-                
+                    
 
 
 
