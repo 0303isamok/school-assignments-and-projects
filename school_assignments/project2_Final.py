@@ -56,8 +56,7 @@ def quiz():
         "awnser": "b"
 
     }]
-    total_awnser_wrong = []
-    total_awnser_right = []
+
     count = 0
     wrong_awnser = 0
     right_awnser = 0
@@ -75,11 +74,10 @@ def quiz():
         if user_awnser == q["awnser"]:
             right_awnser += 1
             count += 1
-            total_awnser_right.append(user_awnser)
         else:
             wrong_awnser += 1
             count += 1
-            total_awnser_wrong.append(user_awnser)
+
 
         if count == 10:
             print("Score:")
@@ -92,14 +90,10 @@ def quiz():
                 for opt in i["options"]:
                     print(opt)
                 if user_awnser == i["awnser"]:
-                    print(f"You guessed {}!")
-                    print(f"the correct awnser was {user_awnser}")
+                    print("Right awnser!")
                     print("_"*24)
                 else:
-                    print(f"Wrong awnser!")
-                    print(f"You guessed {user_awnser}")
-                    wrong = i["awnser"]
-                    print(f"the right awnser was {wrong}")
+                    print("Wrong awnser!")
                     print("_"*24)
                     
 
