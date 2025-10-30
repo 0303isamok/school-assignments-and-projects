@@ -1,6 +1,6 @@
 #made by Isam kartit and Hussain Ghulam
 info_dict = {
-    "username": "MEK1000",
+    "username": "MEK1300",
     "password": "Python"
     }
 
@@ -108,8 +108,8 @@ def login_info(log_dict, username_input, password_input):
 
 
 while True:
-    username_input = str(input("type your username here:")).strip().upper()
-    login_input = str(input("type your password here:")).strip().capitalize()
+    username_input = str(input("type your username here:")).strip()
+    login_input = str(input("type your password here:")).strip()
 
     if login_info(info_dict, username_input, login_input) == True:
         quiz()
