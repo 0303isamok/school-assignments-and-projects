@@ -2,7 +2,7 @@
 info_dict = {
     "username": "MEK1300",
     "password": "Python"
-    }
+}
 
 def quiz():
     quiz_info_list = [{
@@ -33,7 +33,7 @@ def quiz():
     {
         "question": "how many countries does Norway boarder?",
         "options": ["a. 1", "b. 2", "c. 3", "d. 4"],
-        "awnser": "a"
+        "awnser": "c"
     },
     {
         "question": "what is the name of the university in Trondheim?",
@@ -54,12 +54,13 @@ def quiz():
         "question": "From which Norwegian city did the world’s famous composer Edvard Grieg come?",
         "options": ["a. Oslo", "b. Bergen", "c. Stavanger", "d. Tromsø"],
         "awnser": "b"
-
     }]
 
     count = 0
     wrong_awnser = 0
     right_awnser = 0
+    user_awnsers = []
+
     print("#"*11)
     print("#QUIZ TIME#")
     print("#"*11)
@@ -70,6 +71,7 @@ def quiz():
         for opt in q["options"]:
             print(opt)
         user_awnser = input("Awnser with (a/b/c/d):").strip().lower()
+        user_awnsers.append(user_awnser)
         print("_"*24)
         if user_awnser == q["awnser"]:
             right_awnser += 1
@@ -78,26 +80,31 @@ def quiz():
             wrong_awnser += 1
             count += 1
 
-
         if count == 10:
             print("Score:")
             print(f"You got {right_awnser} right awnser's!")
             print(f"You got {wrong_awnser} wrong awnser's!")
             print("_"*24)
-            for i in quiz_info_list:
+            
+            ind = 0
+            while ind < len(quiz_info_list):
+                i = quiz_info_list[ind]
                 print(i["question"])
                 print("Options:")
+
                 for opt in i["options"]:
                     print(opt)
-                if user_awnser == i["awnser"]:
+
+                correct_awnser = i["awnser"]
+                ua = user_awnsers[ind]
+
+                if ua == correct_awnser:
                     print("Right awnser!")
                     print("_"*24)
                 else:
                     print("Wrong awnser!")
                     print("_"*24)
-                    
-
-
+                ind += 1
 
 def login_info(log_dict, username_input, password_input):
     username_ok = username_input == log_dict["username"]
