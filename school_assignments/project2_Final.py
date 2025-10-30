@@ -56,9 +56,9 @@ def quiz():
         "awnser": "b"
 
     }]
-
-    score = 0
     count = 0
+    wrong_awnser = 0
+    right_awnser = 0
     print("#"*11)
     print("#QUIZ TIME#")
     print("#"*11)
@@ -69,30 +69,49 @@ def quiz():
         for opt in q["options"]:
             print(opt)
         user_awnser = input("Awnser with (a/b/c/d):").strip().lower()
+        print("_"*24)
         if user_awnser == q["awnser"]:
-            print(f"Question {count + 1}")
-            print("The question was ", end="")
-            print(q["question"])
-            for opt in q["options"]:
-                print(opt)
+            right_awnser += 1
+            # print(f"Question {count + 1}")
+            # print("The question was ", end="")
+            # print(q["question"])
+            # for opt in q["options"]:
+            #     print(opt)
             count += 1
-            score += 1
-            print("-"*24)
-            print(f"{user_awnser} is correct!")
-            print("Good Job!")
-            print("_"*24)
+            # score += 1
+            # print("-"*24)
+            # print(f"{user_awnser} is correct!")
+            # print("Good Job!")
+            # print("_"*24)
         else:
-            print(f"Question {count + 1}")
-            print(q["question"])
-            for opt in q["options"]:
-                print(opt)
+            wrong_awnser += 1
+            # print(f"Question {count + 1}")
+            # print(q["question"])
+            # for opt in q["options"]:
+            #     print(opt)
             count += 1
-            print("-"*24)
-            print(f"{user_awnser} is the wrong awnser.")
-            print("The right awnser was ", q["awnser"] + ".")
-            print("_"*24)
+            # print("-"*24)
+            # print(f"{user_awnser} is the wrong awnser.")
+            # print("The right awnser was ", q["awnser"] + ".")
+            # 
         if count == 10:
-            print(f"FINAL RATING \n {score} / {count}")
+            print(f"you got {right_awnser} right awnser's!")
+            print(f"you got {wrong_awnser} wrong awnser's!")
+            for i in quiz_info_list:
+                print(i["question"])
+                print("Options:")
+                for opt in i["options"]:
+                    print(opt)
+                if user_awnser == i["awnser"]:
+                    print("You guessed right!")
+                    print(f"the correct awnser was {user_awnser}")
+                    print("_"*24)
+                else:
+                    print("You guessed wrong!")
+                    wrong = i["awnser"]
+                    print(f"the right awnser was {wrong}")
+                    print("_"*24)
+                
 
 
 
