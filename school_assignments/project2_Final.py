@@ -99,9 +99,11 @@ def quiz():
                 ua = user_awnsers[ind]
 
                 if ua == correct_awnser:
+                    print(f"you awnsered {ua}")
                     print("Right awnser!")
                     print("_"*24)
                 else:
+                    print(f"you awnsered {ua}")
                     print("Wrong awnser!")
                     print("_"*24)
                 ind += 1
