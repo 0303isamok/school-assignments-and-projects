@@ -8,58 +8,58 @@ def quiz():
     quiz_info_list = [{
         "question": "What is the capital of Norway?",
         "options": ["a. Bergen", "b. Oslo", "c. Stavanger", "d. Trondheim"],
-        "awnser": "b"
+        "answer": "b"
     },
     {
         "question": "what is the currency of Norway?",
         "options": ["a. Euro", "b. Pound", "c. Krone", "d. Deutsche Mark"],
-        "awnser": "c"
+        "answer": "c"
     },
     {
         "question": "what is the largest city in Norway?",
         "options": ["a. Oslo", "b. Stavanger", "c. Bergen", "d. Trondheim"],
-        "awnser": "a"
+        "answer": "a"
     },
     {
         "question": "when is constitution day (the national day) of Norway?",
         "options": ["a. 27.May", "b. 17.May", "c. 17.April", "d. 27.April"],
-        "awnser": "b"
+        "answer": "b"
     },
     {   
         "question": "what color is the background of the Norwegian flag?",
         "options": ["a. Red", "b. White", "c. Blue", "d. Yellow"],
-        "awnser": "a"
+        "answer": "a"
     },
     {
         "question": "how many countries does Norway boarder?",
         "options": ["a. 1", "b. 2", "c. 3", "d. 4"],
-        "awnser": "c"
+        "answer": "c"
     },
     {
         "question": "what is the name of the university in Trondheim?",
         "options": ["a. UiS", "b. UiO", "c. NMBU", "d. NTNU"],
-        "awnser": "d"
+        "answer": "d"
     },
     {
         "question": "How long is the boarder between Norway and Russia?",
         "options": ["a. 96km", "b. 196km", "c. 296km", "d. 396km"],
-        "awnser": "b"
+        "answer": "b"
     },
     {
         "question": "Where in norway is stavanger?",
         "options": ["a. North", "b. South", "c. South-west", "d. South-east"],
-        "awnser": "c"
+        "answer": "c"
     },
     {
         "question": "From which Norwegian city did the world’s famous composer Edvard Grieg come?",
         "options": ["a. Oslo", "b. Bergen", "c. Stavanger", "d. Tromsø"],
-        "awnser": "b"
+        "answer": "b"
     }]
 
     count = 0
-    wrong_awnser = 0
-    right_awnser = 0
-    user_awnsers = []
+    wrong_answer = 0
+    right_answer = 0
+    user_answers = []
 
     print("#"*11)
     print("#QUIZ TIME#")
@@ -70,20 +70,20 @@ def quiz():
         print(q["question"])
         for opt in q["options"]:
             print(opt)
-        user_awnser = input("Awnser with (a/b/c/d):").strip().lower()
-        user_awnsers.append(user_awnser)
+        user_answer = input("answer with (a/b/c/d):").strip().lower()
+        user_answers.append(user_answer)
         print("_"*24)
-        if user_awnser == q["awnser"]:
-            right_awnser += 1
+        if user_answer == q["answer"]:
+            right_answer += 1
             count += 1
         else:
-            wrong_awnser += 1
+            wrong_answer += 1
             count += 1
 
         if count == 10:
             print("Score:")
-            print(f"You got {right_awnser} right awnser's!")
-            print(f"You got {wrong_awnser} wrong awnser's!")
+            print(f"You got {right_answer} right answer's!")
+            print(f"You got {wrong_answer} wrong answer's!")
             print("_"*24)
             
             ind = 0
@@ -95,18 +95,18 @@ def quiz():
                 for opt in i["options"]:
                     print(opt)
 
-                correct_awnser = i["awnser"]
-                ua = user_awnsers[ind]
+                correct_answer = i["answer"]
+                ua = user_answers[ind]
 
-                if ua == correct_awnser:
-                    print(f"Your awnser was: {ua}")
-                    print("That's the right awnser!")
+                if ua == correct_answer:
+                    print(f"Your answer was: {ua}")
+                    print("That's the right answer!")
                     print("_"*24)
                 else:
-                    print(f"Your awnser was: {ua}")
-                    print("That's the wrong awnser!")
-                    new_right_awnser = i["awnser"]
-                    print(f"The right awnser was: {new_right_awnser}")
+                    print(f"Your answer was: {ua}")
+                    print("That's the wrong answer!")
+                    new_right_answer = i["answer"]
+                    print(f"The right answer was: {new_right_answer}")
                     print("_"*24)
                 ind += 1
 
@@ -114,7 +114,7 @@ def login_info(log_dict, username_input, password_input):
     username_ok = username_input == log_dict["username"]
     password_ok = password_input == log_dict["password"]
     if username_ok == True and password_ok == True:
-        print("login succeeded")
+        print("login succeeded!")
         return True
     else:
         print("Invalid username and/or password")
