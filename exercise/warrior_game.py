@@ -27,12 +27,24 @@ class Vagabond(Character):
 
 assassin = Assassin(100, 20)
 vagabond = Vagabond(100, 20)
-print("Assassin's health before combat")
-print(assassin.health)
+
+print("Assassin's start HP:")
+print(assassin.health, end=" ")
+print("hp")
+print("-"*3)
 assassin.take_damage(40)
-print("Vagabond's health before combat")
-print(vagabond.health)
+
+
+print("Vagabond's start HP:")
+print(vagabond.health, end=" ")
+print("hp")
+print("-"*3)
 vagabond.take_damage(30)
 
+print("|ROUND 1|")
+
+
+print("Assassin's HP:", end=" ")
 print(assassin.health)
+print("Vagabond's HP:", end=" ")
 print(vagabond.health)
