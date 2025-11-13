@@ -1,21 +1,17 @@
 import tkinter as tk
 
-# Create the main window
 root = tk.Tk()
-
-# Set the window title
 root.title("Goat")
-
-# Set the window size (width x height)
 root.geometry("500x500")
-
-# Set the background color
 root.configure(bg="lightgray")
 
-label = tk.Label(root, text="I Like Fridge", font=("Arial", 18))
+label = tk.Label(root, text="I Like Fridge", font=("Arial", 18), bg="lightgray")
 label.pack()
 
-icon_image = tk.PhotoImage(file="duckling_1.png")
+try:
+    icon_image = tk.PhotoImage(file="https://raw.githubusercontent.com/0303isamok/school-assignments-and-projects/main/exercise/duckling_1.png")
+    root.iconphoto(False, icon_image)
+except tk.TclError as e:
+    print("Error loading icon:", e)
 
-# Start the Tkinter event loop
 root.mainloop()
