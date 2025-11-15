@@ -2,7 +2,7 @@ import os
 import shutil
 
 #directory = os.path.join(os.path.expanduser("~"), "OneDrive", "Esma-personlig", "Skrivebord", "alt_piss",)
-directory = r"C:\Users\esmab\OneDrive\Bilder"
+directory = r"C:\Users\izzi0\OneDrive\Bilder"
 
 extensions = {
     ".jpg": "bilder_1",
