@@ -25,8 +25,8 @@ class Range_Minion(Minion):
         super().__init__(health, speed, damage)
         self.health = self.health * 0.8
         self.damage = self.damage * 2
-
-
+class Fighter_Minion():
+    pass
 
 
 cannon = Cannon_Minion(100, 20, 40)
