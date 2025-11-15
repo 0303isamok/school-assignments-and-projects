@@ -1,13 +1,19 @@
 import os
 import shutil
 
-directory = os.path.join(os.path.expanduser("~"), "Bilder")
+#directory = os.path.join(os.path.expanduser("~"), "OneDrive", "Esma-personlig", "Skrivebord", "alt_piss",)
+directory = r"C:\Users\esmab\OneDrive\Bilder"
 
 extensions = {
-    ".jpg": "bilder1",
-    ".png": "bilder1",
-    ".gif": "bilder1",
-    "mp4": "video1"
+    ".jpg": "bilder_1",
+    ".png": "bilder_1",
+    ".gif": "bilder_1",
+    ".mp4": "video_1",
+    ".docx": "word_filer",
+    ".pdf": "pdf_filer",
+    ".3mf": "3d_printing",
+    ".pptx": "powerpointer",
+    ".AVI": "video_1"
 }
 
 for filename in os.listdir(directory):
@@ -26,6 +32,6 @@ for filename in os.listdir(directory):
 
             print(f"Moved {filename} to {folder_name} folder.")
         else:
-            print("skipped {filename}. Unknown file extension")
+            print(f"skipped {filename}. Unknown file extension")
     else:
         print(f"Skipped {filename}, it is a directory")
