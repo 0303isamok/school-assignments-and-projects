@@ -1,10 +1,18 @@
+"""
+farger: blå, rød, svart
+class for Block
+class eller def for grid
+når en Block click, endre farge rød 1 sek så svart
+"""
+
 import pygame as pg
 import sys
 
 BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)
-WIDTH = 1920
-HEIGHT = 1000
+WIDTH = 400
+HEIGHT = 400
+
 
 def main():
     global SCREEN, CLOCK
@@ -29,6 +37,5 @@ def drawGrid():
         for y in range(0, HEIGHT, blockSize):
             rect = pg.Rect(x, y, blockSize, blockSize)
             pg.draw.rect(SCREEN, BLACK, rect, 1)
-
 if __name__ == "__main__":
     main()
