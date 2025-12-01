@@ -1,3 +1,2 @@
-import random
-a = int(random.random())
-print(a)
+a = 3
+print(a == 4)
