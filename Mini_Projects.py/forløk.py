@@ -1,3 +1,6 @@
-import random
-a = int(random.random())
+a = [1, 2, 3]
+b = a.copy()
+a[0] = 5
+a.remove(5)
 print(a)
+print(b)
