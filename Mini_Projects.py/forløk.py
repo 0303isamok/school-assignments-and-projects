@@ -1,2 +1,2 @@
-a = 3
-print(a == 4)
+a = "wensday"
+print("Day" in a)
