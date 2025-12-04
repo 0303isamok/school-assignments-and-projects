@@ -1,2 +1,2 @@
-a = "wensday"
-print("Day" in a)
+setin = {2, 1}
+print(setin)
